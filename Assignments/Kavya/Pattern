@@ -1,0 +1,49 @@
+/*
+            Assignment 1
+           -------------
+
+        1 2 3 4 5 5 4 3 2 1
+        1 2 3 4 * * 4 3 2 1
+        1 2 3 * * * * 3 2 1
+        1 2 * * * * * * 2 1
+        1 * * * * * * * * 1
+
+Q) Printing the above pattern using while loops.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5;
+    int i = 0;
+
+    while (i < n) {
+        int j = 0;
+
+        // Print numbers in increasing order
+        while (j < n - i) {
+            cout << (j + 1) << " ";
+            j++;
+        }
+
+        // Print asterisks
+        j = 0;
+        while (j < 2*i) {
+            cout << "* ";
+            j++;
+        }
+
+        // Print numbers in decreasing order
+        j = n - i - 1;
+        while (j >= 0) {
+            if (j != n - i)
+                cout << (j+1) << " "; // Mirror the increasing order
+            j--;
+        }
+
+        cout << endl;
+        i++;
+    }
+
+    return 0;
+}
